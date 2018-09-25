@@ -2,8 +2,7 @@ SHELL:=/bin/bash
 PYTHON=.venv/bin/python
 PIP=.venv/bin/pip
 SOURCE_VENV=. .venv/bin/activate
-FLAKE8_CHECKING=$(SOURCE_VENV) && flake8 ndscheduler thePlug --max-line-length 100
-#FLAKE8_CHECKING=$(SOURCE_VENV) && flake8 ndscheduler simple_scheduler --max-line-length 100
+FLAKE8_CHECKING=$(SOURCE_VENV) && flake8 ndscheduler simple_scheduler --max-line-length 100
 
 all: test
 
@@ -34,7 +33,31 @@ clean:
 	@($(SOURCE_VENV) && $(PYTHON) setup.py clean) >& /dev/null || python setup.py clean
 	@echo "Done."
 
-thePlug:
+lightsens:
+	if [ ! -d ".venv" ]; then make install; fi
+
+	# Install dependencies
+	$(PIP) install -r lightSens/requirements.txt;
+
+	# Uninstall ndscheduler, so that simple scheduler can pick up non-package code
+	$(SOURCE_VENV) && $(PIP) uninstall -y ndscheduler || true
+	$(SOURCE_VENV) && \
+		NDSCHEDULER_SETTINGS_MODULE=lightSens.settings PYTHONPATH=.:$(PYTHONPATH) \
+		$(PYTHON) lightSens/scheduler.py
+
+theplug:
+	if [ ! -d ".venv" ]; then make install; fi
+
+	# Install dependencies
+	$(PIP) install -r theplug/requirements.txt;
+
+	# Uninstall ndscheduler, so that simple scheduler can pick up non-package code
+	$(SOURCE_VENV) && $(PIP) uninstall -y ndscheduler || true
+	$(SOURCE_VENV) && \
+		NDSCHEDULER_SETTINGS_MODULE=theplug.settings PYTHONPATH=.:$(PYTHONPATH) \
+		$(PYTHON) theplug/scheduler.py
+
+simple:
 	if [ ! -d ".venv" ]; then make install; fi
 
 	# Install dependencies
@@ -43,5 +66,7 @@ thePlug:
 	# Uninstall ndscheduler, so that simple scheduler can pick up non-package code
 	$(SOURCE_VENV) && $(PIP) uninstall -y ndscheduler || true
 	$(SOURCE_VENV) && \
-		NDSCHEDULER_SETTINGS_MODULE=thePlug.settings PYTHONPATH=.:$(PYTHONPATH) \
-		$(PYTHON) thePlug/scheduler.py
+		NDSCHEDULER_SETTINGS_MODULE=simple_scheduler.settings PYTHONPATH=.:$(PYTHONPATH) \
+		$(PYTHON) simple_scheduler/scheduler.py
+
+
