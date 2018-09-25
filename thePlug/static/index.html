@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Scheduler</title>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="static/css/vendor/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="static/css/vendor/bootstrap-switch.css" rel="stylesheet" type="text/css">
+    <link href="static/css/vendor/jquery.dataTables.css" rel="stylesheet" type="text/css">
+    <link href="static/css/vendor/select2.css" rel="stylesheet" type="text/css">
+    <link href="static/css/vendor/select2-bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="static/css/main.css" rel="stylesheet" type="text/css">
+
+    <script>
+        var DEFAULT_CACHE_BUSTER = (new Date()).getTime();
+        // DEFAULT_CACHE_BUSTER will be replaced with a release token by the
+        // build script. cacheBuster is used by requirejs.
+        cacheBuster = DEFAULT_CACHE_BUSTER;
+    </script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <i class="icon-bar"></i>
+            <i class="icon-bar"></i>
+            <i class="icon-bar"></i>
+          </button>
+          <span class="navbar-brand">thePlug</span>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li id="jobs-tab"><a href="#jobs">Jobs</a></li>
+          </ul>
+        </div>
+      </div>
+    </div> <!-- End of navbar -->
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 col-md-2 sidebar">
+                <div id="jobs-page-sidebar" style="display:none">
+                    <form role="form">
+                        <div class="form-group">
+                            <a id="add-job-button" data-toggle="modal" data-target="#add-job-modal" class=" form-control btn btn-primary">New Event</a>
+                        </div>
+                        <div class="form-group">
+                            <button class="form-control btn btn-primary" id="jobs-refresh-button">Refresh</button>
+                        </div>
+                    </form>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Statistics</div>
+                        <div class="panel-body" id="jobs-stats">
+                            <small>
+                            Total: <span id="jobs-total-count">-</span><br>
+                            <span class="success-color">Active: <span id="jobs-active-count">-</span> </span><br>
+                            <span class="failed-color">Inactive: <span id="jobs-inactive-count">-</span> </span>
+                            </small>
+                        </div>
+                    </div>
+                </div> <!-- jobs-page-sidebar -->
+            </div>
+
+
+            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+                <div id="jobs-page-content" style="display:none">
+                    <h2 class="sub-header">Jobs</h2>
+                    <div class="table-responsive">
+                        <table class="table table-striped display" id="jobs-table">
+                            <thead>
+                                <tr>
+                                    <th>Job Name</th>
+                                    <th>Schedule (UTC)</th>
+                                    <th>Next Run</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="jobs-table-body">
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="jobs-spinner"></div>
+                </div> <!-- jobs-page-content -->
+            </div>
+        </div>
+    </div>
+    <script data-main="/static/js/app" src="/static/js/vendor/require.js"></script>
+</body>
+
+<script id="jobs-meta-info" type="application/json">
+    {% raw jobs_meta_info %}
+</script>
+
+</html>
