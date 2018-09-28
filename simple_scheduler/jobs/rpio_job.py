@@ -3,8 +3,8 @@
 from ndscheduler import job
 import RPi.GPIO as GPIO
 
-class RPIOJob(job.JobBase):
 
+class RPIOJob(job.JobBase):
 
     @classmethod
     def meta_info(cls):
@@ -18,7 +18,6 @@ class RPIOJob(job.JobBase):
         }
 
     def run(self, action, *args, **kwargs):
-        DEBUG = 1
         GPIO.setmode(GPIO.BCM)
         switchPin = 23
         GPIO.setwarnings(False)
@@ -28,7 +27,8 @@ class RPIOJob(job.JobBase):
             GPIO.output(switchPin, GPIO.HIGH)
         if action == "off":
             GPIO.output(switchPin, GPIO.LOW)
-        return action 
+        return action
+
 
 if __name__ == "__main__":
     # You can easily test this job here

@@ -33,7 +33,10 @@ define(['backbone', 'vendor/moment-timezone-with-data'], function(backbone, mome
     getScheduleString: function() {
 
       var altresponse = '';
-      return this.get('hour') + ':' + this.get('minute') + ', on ' + this.get('day_of_week');
+	    
+      var iconstyle = (this.get('pub_args')[0] == 'off' ) ? 'fas':'far';
+
+      return '<i class="' + iconstyle + ' fa-lightbulb fa-5x"></i>' + this.get('hour') + ':' + this.get('minute') + ', on ' + this.get('day_of_week');
     },
 
     /**

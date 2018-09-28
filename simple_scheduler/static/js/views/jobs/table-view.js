@@ -70,7 +70,13 @@ define(['utils',
 	'info': false,
 	'searching': false,
 	'paging': false,
-	'ordering': false
+	'ordering': false,
+	'fixedColumns': {
+           heightMatch: 'none'
+         },
+	      "render": function ( data, type, row, meta ) {
+		            return '<a href="'+data+'">Download</a>';
+		          }
       });
     },
 
