@@ -121,7 +121,7 @@ define(['utils',
 
         var jobId = $('#edit-input-job-id').val();
         var jobName = $('#edit-input-job-name').val();
-        var jobTask = $('#edit-input-job-task-class').val();
+        var jobTask = "simple_scheduler.jobs.rpio_job.RPIOJob";
         var month = $('#edit-input-job-month').val();
         var dayOfWeek = $('#edit-input-job-day-of-week').val();
         var day = $('#edit-input-job-day').val();

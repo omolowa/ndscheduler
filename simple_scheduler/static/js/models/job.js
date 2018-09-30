@@ -54,8 +54,8 @@ define(['backbone', 'vendor/moment-timezone-with-data'], function(backbone, mome
      */
     getDisplayString: function(jobObj) {
 
-      var one = '<a href="#" title="Edit event" data-toggle="modal" data-target="#edit-job-modal" data-job-task="' + _.escape(jobObj.job_class_string) + '"'; 
-      var two = 'data-id="' + jobObj.job_id + '" data-job-name=' + _.escape(jobObj.name) + '" data-job-month="*" data-job-day="*" ';
+      var one = '<a href="#" title="Edit event" data-toggle="modal" data-target="#edit-job-modal" data-job-task="simple_scheduler.jobs.rpio_job.RPIOJob"'; 
+      var two = 'data-id="' + jobObj.job_id + '" data-job-name="' + _.escape(jobObj.name) + '" data-job-month="*" data-job-day="*" ';
       var thr = 'data-job-hour="' + _.escape(jobObj.hour) + '" data-job-minute="' + _.escape(jobObj.minute)
       var fou = '" data-job-day-of-week="' + _.escape(jobObj.day_of_week) + '" ';
       var fiv = 'data-job-active="<%= job_active %>" data-job-pubargs="<%= job_pubargs %>">'
