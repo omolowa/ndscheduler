@@ -11,7 +11,7 @@ require.config({
     'backbone': 'vendor/backbone',
     'bootstrap': 'vendor/bootstrap',
     'select2': 'vendor/select2',
-
+    'anypicker' : 'vendor/anypicker',
     'utils': 'utils',
 
     'text': 'vendor/text',

@@ -11,7 +11,7 @@ require.config({
     'backbone': 'vendor/backbone',
     'bootstrap': 'vendor/bootstrap',
     'bootstrapswitch': 'vendor/bootstrap-switch',
-
+    'anypicker' : 'vendor/anypicker',
     'utils': 'utils',
 
     'text': 'vendor/text',
@@ -52,7 +52,7 @@ define(['utils',
 				dateTimeFormat: "MMMM d, yyyy",
         theme: "iOS" // "Default", "iOS", "Android", "Windows"
       });
-      
+
       this.bindEditJobConfirmClickEvent();
       this.bindDeleteJobConfirmClickEvent();
       this.bindModalPopupEvent();
