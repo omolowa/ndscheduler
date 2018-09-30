@@ -50,6 +50,24 @@ define(['utils',
       $('body').append(AddJobModalHtml);
       this.bindAddJobConfirmClickEvent();
 
+      var jobsMetaInfo = $.parseJSON($('#jobs-meta-info').html());
+      var data = [];
+      _.forEach(jobsMetaInfo, function(job) {
+        data.push({
+          id: job.job_class_string,
+          text: job.job_class_string,
+          job: job
+        })
+      });
+      $('#input-job-task-class').select2({
+        placeholder: "Select an job class, please",
+        data: data
+      }).on("select2-selecting", function(e) {
+        $('#add-job-class-notes').html(
+            _.template(JobClassNotesHtml)({job: e.choice.job})
+        );
+      });
+
     },
 
     bindAddJobConfirmClickEvent: function() {
@@ -58,9 +76,6 @@ define(['utils',
         e.preventDefault();
 
         var jobName = $('#input-job-name').val();
-        var hour = $('#input-job-hour').val();
-        var minute = $('#input-job-minute').val();
-        var args = $('#input-job-task-args').val();
         var dayOfWeek = $('#input-job-day-of-week').val();
         var jobTask = "simple_scheduler.jobs.rpio_job.RPIOJob";
         var month = "*";

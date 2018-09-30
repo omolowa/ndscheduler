@@ -58,7 +58,7 @@ define(['backbone', 'vendor/moment-timezone-with-data'], function(backbone, mome
       var two = 'data-id="' + jobObj.job_id + '" data-job-name="' + _.escape(jobObj.name) + '" data-job-month="*" data-job-day="*" ';
       var thr = 'data-job-hour="' + _.escape(jobObj.hour) + '" data-job-minute="' + _.escape(jobObj.minute)
       var fou = '" data-job-day-of-week="' + _.escape(jobObj.day_of_week) + '" ';
-      var fiv = 'data-job-active="<%= job_active %>" data-job-pubargs="<%= job_pubargs %>">'
+      var fiv = 'data-job-active="<%= job_active %>" data-job-pubargs="' + _.escape(jobObj.pub_args) + '">';
 
       var link = one + two + thr + fou + fiv;
       

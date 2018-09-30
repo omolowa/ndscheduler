@@ -15,3 +15,5 @@ dist/
 *.db
 *.egg-info/
 *.egg/
+simple_scheduler/static/.DS_Store
+.gitignore

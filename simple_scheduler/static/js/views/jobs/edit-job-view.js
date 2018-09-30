@@ -47,6 +47,12 @@ define(['utils',
     initialize: function() {
       $('body').append(EditJobModalHtml);
 
+      $('#edit-input-job-time').AnyPicker({
+        mode: "datetime",
+				dateTimeFormat: "MMMM d, yyyy",
+        theme: "iOS" // "Default", "iOS", "Android", "Windows"
+      });
+      
       this.bindEditJobConfirmClickEvent();
       this.bindDeleteJobConfirmClickEvent();
       this.bindModalPopupEvent();
