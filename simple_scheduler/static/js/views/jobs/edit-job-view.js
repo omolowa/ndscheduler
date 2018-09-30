@@ -56,6 +56,7 @@ define(['utils',
       $('#edit-input-job-time').AnyPicker({
         mode: "datetime",
         dateTimeFormat: "HH:mm",
+				selectedDate: "21:12",
 				onChange: function(iRow, iComp, oSelectedValues)
 				{
 					console.log("Changed Value : " + iRow + " " + iComp + " " + oSelectedValues);
