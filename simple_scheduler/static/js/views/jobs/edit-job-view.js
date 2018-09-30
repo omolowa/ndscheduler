@@ -47,23 +47,6 @@ define(['utils',
     initialize: function() {
       $('body').append(EditJobModalHtml);
 
-      var jobsMetaInfo = $.parseJSON($('#jobs-meta-info').html());
-      var data = [];
-      _.forEach(jobsMetaInfo, function(job) {
-        data.push({
-          id: job.job_class_string,
-          text: job.job_class_string,
-          job: job
-        })
-      });
-      $('#edit-input-job-task-class').select2({
-        data: data
-      }).on("select2-selecting", function(e) {
-        $('#edit-job-class-notes').html(
-            _.template(JobClassNotesHtml)({job: e.choice.job})
-        );
-      });
-
       this.bindEditJobConfirmClickEvent();
       this.bindDeleteJobConfirmClickEvent();
       this.bindModalPopupEvent();

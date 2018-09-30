@@ -54,16 +54,16 @@ define(['backbone', 'vendor/moment-timezone-with-data'], function(backbone, mome
      */
     getDisplayString: function(jobObj) {
 
-      var altresponse = '';
+      var one = '<a href="#" title="Edit event" data-toggle="modal" data-target="#edit-job-modal" data-job-task="' + _.escape(jobObj.job_class_string) + '"'; 
+      var two = 'data-id="' + jobObj.job_id + '" data-job-name=' + _.escape(jobObj.name) + '" data-job-month="*" data-job-day="*" ';
+      var thr = 'data-job-hour="' + _.escape(jobObj.hour) + '" data-job-minute="' + _.escape(jobObj.minute)
+      var fou = '" data-job-day-of-week="' + _.escape(jobObj.day_of_week) + '" ';
+      var fiv = 'data-job-active="<%= job_active %>" data-job-pubargs="<%= job_pubargs %>">'
+
+      var link = one + two + thr + fou + fiv;
       
       var intro = '<div style="display:table-cell; vertical-align:bottom">';
       
-      '<a href="#" title="Edit event" data-toggle="modal" data-target="#edit-job-modal" data-job-task="' + _.escape(jobObj.job_class_string) + '"'; 
-      'data-id="' + jobObj.job_id + '" data-job-name=' + _.escape(jobObj.name) + '" data-job-month="*" data-job-day="*" ';
-      'data-job-hour="' + _.escape(jobObj.hour) + '" data-job-minute="' + _.escape(jobObj.minute)
-      '" data-job-day-of-week="' + _.escape(jobObj.day_of_week) + '" ';
-      'data-job-active="<%= job_active %>" data-job-pubargs="<%= job_pubargs %>">'
-
       var name = '<h2>' + jobObj.name + '</h2>';
       var time = '<h5>' + ("0" + this.get('hour')).slice(-2) 
         + ':' 
@@ -74,7 +74,7 @@ define(['backbone', 'vendor/moment-timezone-with-data'], function(backbone, mome
  
       var outro = '</div></a>';
 
-      var theString =  intro + name + time + outro;
+      var theString =  link + intro + name + time + outro;
 
       return theString;
 
