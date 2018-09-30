@@ -31,6 +31,11 @@ require.config({
     'backbone': {
       deps: ['underscore', 'jquery'],
       exports: 'Backbone'
+    },
+
+    'anypicker': {
+      deps: ['jquery'],
+      exports: 'AnyPicker'
     }
   }
 });
