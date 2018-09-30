@@ -55,8 +55,12 @@ define(['utils',
 
       $('#edit-input-job-time').AnyPicker({
         mode: "datetime",
-				dateTimeFormat: "MMMM d, yyyy",
-        theme: "iOS" // "Default", "iOS", "Android", "Windows"
+        dateTimeFormat: "HH:mm",
+				onChange: function(iRow, iComp, oSelectedValues)
+				{
+					console.log("Changed Value : " + iRow + " " + iComp + " " + oSelectedValues);
+				},
+				theme: "iOS" // "Default", "iOS", "Android", "Windows"
       });
 
       this.bindEditJobConfirmClickEvent();
