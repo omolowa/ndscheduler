@@ -92,6 +92,9 @@ define(['utils',
         var jobId = $button.data('id');
         var jobActive = $button.data('job-active');
 
+        var hour = $button.data('job-hour');
+        var minute = $button.data('job-minute');
+
         $('#edit-input-job-name').val($button.data('job-name'));
         $('#edit-input-job-task-class').val($button.data('job-task')).trigger('change');
         $('#edit-input-job-task-args').val($button.attr('data-job-pubargs'));
@@ -100,6 +103,7 @@ define(['utils',
         $('#edit-input-job-day').val($button.data('job-day'));
         $('#edit-input-job-hour').val($button.data('job-hour'));
         $('#edit-input-job-minute').val($button.data('job-minute'));
+        $('#edit-input-job-time').val(hour + ":" + minute);
         $('#edit-input-job-id').val(jobId);
 
         var $checkbox = $('<input>', {
