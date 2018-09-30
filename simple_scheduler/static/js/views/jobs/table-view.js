@@ -124,7 +124,6 @@ define(['utils',
       var data = [];
 
       // Build up data to pass to data tables
-          // job.getNextRunTimeHTMLString(),
       _.each(jobs, function(job) {
         var jobObj = job.toJSON();
         data.push([
@@ -140,9 +139,10 @@ define(['utils',
             'job_hour': _.escape(jobObj.hour),
             'job_minute': _.escape(jobObj.minute),
             'job_active': job.getActiveString(),
-            'job_pubargs': _.escape(job.getPubArgsString())
+            'job_pubargs': _.escape(job.getPubArgsString()),
+            'job_icon': _.escape(job.getIcon())
           }),
-          job.getScheduleString()
+          job.getDisplayString()
         ]);
       });
 

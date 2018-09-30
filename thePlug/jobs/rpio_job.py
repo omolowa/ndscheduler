@@ -1,24 +1,22 @@
-"""A sample job that prints string."""
-
 from ndscheduler import job
 import RPi.GPIO as GPIO
 
-class RPIOJob(job.JobBase):
 
+class RPIOJob(job.JobBase):
 
     @classmethod
     def meta_info(cls):
         return {
             'job_class_string': '%s.%s' % (cls.__module__, cls.__name__),
             'notes': 'This will toggle an RPIO input/ouput!',
-            'arguments': [
-                {'type': 'string', 'description': 'New state (on / off)'}
-            ],
+            'arguments': [{
+                'type': 'string',
+                'description': 'New state (on / off)'
+            }],
             'example_arguments': '["off"]'
         }
 
-    def run(self, action, *args, **kwargs):
-        DEBUG = 1
+    def run(self, action, * args, ** kwargs):
         GPIO.setmode(GPIO.BCM)
         switchPin = 23
         GPIO.setwarnings(False)
@@ -28,7 +26,8 @@ class RPIOJob(job.JobBase):
             GPIO.output(switchPin, GPIO.HIGH)
         if action == "off":
             GPIO.output(switchPin, GPIO.LOW)
-        return action 
+        return action
+
 
 if __name__ == "__main__":
     # You can easily test this job here

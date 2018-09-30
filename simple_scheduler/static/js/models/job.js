@@ -39,6 +39,41 @@ define(['backbone', 'vendor/moment-timezone-with-data'], function(backbone, mome
       return '<i class="' + iconstyle + ' fa-lightbulb fa-5x"></i>' + this.get('hour') + ':' + this.get('minute') + ', on ' + this.get('day_of_week');
     },
 
+    getIcon: function () {
+
+      var state = (this.get('pub_args')[0] == 'off' ) ? 'fas':'far';
+      var icon = '<center><i class="' + state + ' fa-lightbulb fa-5x"></i></center>';
+
+      return icon;
+    },
+
+     /**
+     * Returns display string for this job.
+     *
+     * @return {string} display string for this job.
+     */
+    getDisplayString: function() {
+
+      var altresponse = '';
+      
+      var intro = '<div style="display:table-cell; vertical-align:bottom">';
+
+      var name = '<h2>' + this.get('job_name') + '</h2>';
+      var time = '<h5>' + ("0" + this.get('hour')).slice(-2) 
+        + ':' 
+        +  ("0" + this.get('minute')).slice(-2) 
+        + ' on '
+        + this.get('day_of_week')
+        + '</h5>';
+ 
+      var outro = '</div>';
+
+      var theString =  intro + name + time + outro;
+
+      return theString;
+
+    },
+
     /**
      * Returns json string for arguments to run the job.
      *
