@@ -140,9 +140,9 @@ define(['utils',
             'job_minute': _.escape(jobObj.minute),
             'job_active': job.getActiveString(),
             'job_pubargs': _.escape(job.getPubArgsString()),
-            'job_icon': _.escape(job.getIcon())
+            'job_icon': job.getIcon()
           }),
-          job.getDisplayString()
+          job.getDisplayString(jobObj.name)
         ]);
       });
 

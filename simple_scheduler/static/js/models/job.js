@@ -52,13 +52,13 @@ define(['backbone', 'vendor/moment-timezone-with-data'], function(backbone, mome
      *
      * @return {string} display string for this job.
      */
-    getDisplayString: function() {
+    getDisplayString: function(oname) {
 
       var altresponse = '';
       
       var intro = '<div style="display:table-cell; vertical-align:bottom">';
 
-      var name = '<h2>' + this.get('job_name') + '</h2>';
+      var name = '<h2>' + oname + '</h2>';
       var time = '<h5>' + ("0" + this.get('hour')).slice(-2) 
         + ':' 
         +  ("0" + this.get('minute')).slice(-2) 
