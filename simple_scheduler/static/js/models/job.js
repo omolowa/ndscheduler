@@ -52,13 +52,19 @@ define(['backbone', 'vendor/moment-timezone-with-data'], function(backbone, mome
      *
      * @return {string} display string for this job.
      */
-    getDisplayString: function(oname) {
+    getDisplayString: function(jobObj) {
 
       var altresponse = '';
       
       var intro = '<div style="display:table-cell; vertical-align:bottom">';
+      
+      '<a href="#" title="Edit event" data-toggle="modal" data-target="#edit-job-modal" data-job-task="' + _.escape(jobObj.job_class_string) + '"'; 
+      'data-id="' + jobObj.job_id + '" data-job-name=' + _.escape(jobObj.name) + '" data-job-month="*" data-job-day="*" ';
+      'data-job-hour="' + _.escape(jobObj.hour) + '" data-job-minute="' + _.escape(jobObj.minute)
+      '" data-job-day-of-week="' + _.escape(jobObj.day_of_week) + '" ';
+      'data-job-active="<%= job_active %>" data-job-pubargs="<%= job_pubargs %>">'
 
-      var name = '<h2>' + oname + '</h2>';
+      var name = '<h2>' + jobObj.name + '</h2>';
       var time = '<h5>' + ("0" + this.get('hour')).slice(-2) 
         + ':' 
         +  ("0" + this.get('minute')).slice(-2) 
@@ -66,7 +72,7 @@ define(['backbone', 'vendor/moment-timezone-with-data'], function(backbone, mome
         + this.get('day_of_week')
         + '</h5>';
  
-      var outro = '</div>';
+      var outro = '</div></a>';
 
       var theString =  intro + name + time + outro;
 

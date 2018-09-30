@@ -142,7 +142,7 @@ define(['utils',
             'job_pubargs': _.escape(job.getPubArgsString()),
             'job_icon': job.getIcon()
           }),
-          job.getDisplayString(jobObj.name)
+          job.getDisplayString(jobObj)
         ]);
       });
 

@@ -3,13 +3,13 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="myModalLabel">Edit a Job</h4>
+                <h4 class="modal-title" id="myModalLabel">Edit an alarm</h4>
             </div>
             <div class="modal-body">
                 <form class="form-horizontal" role="form">
-                    <div class="form-group">
+                    <div class="form-group" style="display:none">
                         <label for="edit-input-job-name" class="col-sm-2 control-label">
-                            Job ID
+                            Alarm ID
                         </label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" readonly id="edit-input-job-id" value="">
@@ -71,8 +71,8 @@
                         <label for="" class="col-sm-2 control-label">
                             Note:
                         </label>
-                        For day of week, 0 is Monday, 6 is Sunday. Legal format: <strong>0-3</strong>,
-                        <strong>mon,tue,wed,thu,fri,sat,sun</strong>
+                        0 is Monday, 6 is Sunday.Ex: <strong>0-3</strong>,
+                        <strong>mon,tue,fri,sat</strong>
                     </div>
                 </form>
             </div>
