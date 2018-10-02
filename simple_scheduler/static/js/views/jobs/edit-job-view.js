@@ -96,6 +96,18 @@ define(['utils',
         $('#edit-input-job-time').val(hour + ":" + minute);
         $('#edit-input-job-id').val(jobId);
 
+        var weekdaysArray = ["mon","tue","wed","thu","fri","sat","sun"];
+
+        for (var i = 0; i < weekdaysArray.length; i++) {
+          if ($button.data('job-day-of-week').match(/weekdaysArray[i]/))
+          {
+            $('#' + weekdaysArray[i])( "checked", true );
+          }
+          else {
+            $('#' + weekdaysArray[i]).prop( "checked", false );
+          } 
+        }
+       
 //        var $button = $('#edit-input-job-time');
 //        var selDate = $button.data('job-hour') + ":" + $button.data('job-minute');
   
