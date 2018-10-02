@@ -152,7 +152,7 @@ define(['utils',
         var args = $('#edit-input-job-task-args').val();
 
         if(args.charAt() != "[") {
-          args = '["' + $('#edit-input-job-task-args').val(); + '"]';
+          args = '["' + $('#edit-input-job-task-args').val() + '"]';
         }
 
         //        var hour = $('#edit-input-job-hour').val();
