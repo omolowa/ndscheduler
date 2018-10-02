@@ -53,20 +53,6 @@ define(['utils',
     initialize: function() {
       $('body').append(EditJobModalHtml);
 
-      var $button = $('#edit-input-job-time');
-      var selDate = $button.data('job-hour') + ":" + $button.data('job-minute');
-
-      $('#edit-input-job-time').AnyPicker({
-        mode: "datetime",
-        dateTimeFormat: "HH:mm",
-				selectedDate: selDate ,
-				onChange: function(iRow, iComp, oSelectedValues)
-				{
-					console.log("Changed Value : " + iRow + " " + iComp + " " + oSelectedValues);
-				},
-				theme: "iOS" // "Default", "iOS", "Android", "Windows"
-      });
-
       this.bindEditJobConfirmClickEvent();
       this.bindDeleteJobConfirmClickEvent();
       this.bindModalPopupEvent();
@@ -110,6 +96,20 @@ define(['utils',
         $('#edit-input-job-time').val(hour + ":" + minute);
         $('#edit-input-job-id').val(jobId);
 
+//        var $button = $('#edit-input-job-time');
+//        var selDate = $button.data('job-hour') + ":" + $button.data('job-minute');
+  
+        $('#edit-input-job-time').AnyPicker({
+          mode: "datetime",
+          dateTimeFormat: "HH:mm",
+          selectedDate: $('#edit-input-job-time').val(),
+          onChange: function(iRow, iComp, oSelectedValues)
+          {
+            console.log("Changed Value : " + iRow + " " + iComp + " " + oSelectedValues);
+          },
+          theme: "iOS" // "Default", "iOS", "Android", "Windows"
+        });
+  
         var $checkbox = $('<input>', {
           type: 'checkbox',
           name: 'pause-resume-checkbox',
@@ -147,11 +147,32 @@ define(['utils',
         var jobName = $('#edit-input-job-name').val();
         var jobTask = "simple_scheduler.jobs.rpio_job.RPIOJob";
         var month = $('#edit-input-job-month').val();
-        var dayOfWeek = $('#edit-input-job-day-of-week').val();
         var day = $('#edit-input-job-day').val();
-        var hour = $('#edit-input-job-hour').val();
-        var minute = $('#edit-input-job-minute').val();
         var args = $('#edit-input-job-task-args').val();
+
+        //        var hour = $('#edit-input-job-hour').val();
+        //        var minute = $('#edit-input-job-minute').val();
+        //        var dayOfWeek = $('#edit-input-job-day-of-week').val();
+
+        var hour=$('#edit-input-job-time').val().split(':')[0];
+        var minute=$('#edit-input-job-time').val().split(':')[1];
+
+        var builderDayOfWeek = '';
+        var dayOfWeek = '';
+
+        var weekdaysArray = ["mon","tue","wed","thu","fri","sat","sun"];
+
+        for (var i = 0; i < weekdaysArray.length; i++) {
+          if ($('#' + weekdaysArray[i]).is(":checked"))
+          {
+            builderDayOfWeek = builderDayOfWeek + weekdaysArray[i] + ',';
+          } 
+        }
+          
+        dayOfWeek = builderDayOfWeek.slice(0, -1);
+
+        $('#' + id).is(":checked")
+        var $boxes = $("input.weekday:checkbox") $('input[name=thename]:checked');
 
         if (jobName.trim() === '') {
           utils.alertError('Please fill in job name');

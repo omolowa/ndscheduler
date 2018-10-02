@@ -197,3 +197,29 @@ tr { height: 50px; }
   padding-right: 10px !important;
   padding-left: 10px !important;
 }
+
+/*
+ *  From a codepen by Dan
+ *  https://codepen.io/steelwater/pen/BjeZQx
+ *
+ */                      
+.weekDays-selector input {
+  display: none!important;
+}
+
+.weekDays-selector input[type=checkbox] + label {
+  display: inline-block;
+  border-radius: 6px;
+  background: #dddddd;
+  height: 40px;
+  width: 50px;
+  margin-right: 3px;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.weekDays-selector input[type=checkbox]:checked + label {
+  background: rgb(40, 225, 70);
+  color: #ffffff;
+}
