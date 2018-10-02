@@ -53,9 +53,13 @@ define(['utils',
     initialize: function() {
       $('body').append(EditJobModalHtml);
 
+      var $button = $('#edit-input-job-time');
+      var selDate = $button.data('job-hour') + ":" + $button.data('job-minute');
+
       $('#edit-input-job-time').AnyPicker({
         mode: "datetime",
         dateTimeFormat: "HH:mm",
+				selectedDate: selDate ,
 				onChange: function(iRow, iComp, oSelectedValues)
 				{
 					console.log("Changed Value : " + iRow + " " + iComp + " " + oSelectedValues);
@@ -103,8 +107,7 @@ define(['utils',
         $('#edit-input-job-day').val($button.data('job-day'));
         $('#edit-input-job-hour').val($button.data('job-hour'));
         $('#edit-input-job-minute').val($button.data('job-minute'));
-        //$('#edit-input-job-time').val(hour + ":" + minute);
-        $('#edit-input-job-time').setSelectedDate(hour + ":" + minute);
+        $('#edit-input-job-time').val(hour + ":" + minute);
         $('#edit-input-job-id').val(jobId);
 
         var $checkbox = $('<input>', {
