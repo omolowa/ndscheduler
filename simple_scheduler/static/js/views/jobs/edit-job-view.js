@@ -99,9 +99,9 @@ define(['utils',
         var weekdaysArray = ["mon","tue","wed","thu","fri","sat","sun"];
 
         for (var i = 0; i < weekdaysArray.length; i++) {
-          if ($button.data('job-day-of-week').match(/weekdaysArray[i]/))
+          if ($button.data('job-day-of-week').includes(weekdaysArray[i]))
           {
-            $('#' + weekdaysArray[i])( "checked", true );
+            $('#' + weekdaysArray[i]).prop( "checked", true );
           }
           else {
             $('#' + weekdaysArray[i]).prop( "checked", false );
