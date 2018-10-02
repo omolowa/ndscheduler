@@ -148,7 +148,12 @@ define(['utils',
         var jobTask = "simple_scheduler.jobs.rpio_job.RPIOJob";
         var month = $('#edit-input-job-month').val();
         var day = $('#edit-input-job-day').val();
+        
         var args = $('#edit-input-job-task-args').val();
+
+        if(args.charAt() != "[") {
+          args = '["' + $('#edit-input-job-task-args').val(); + '"]';
+        }
 
         //        var hour = $('#edit-input-job-hour').val();
         //        var minute = $('#edit-input-job-minute').val();
