@@ -89,8 +89,6 @@ define(['spin', 'noty'], function(Spinner) {
    */
   var getTaskArgs = function(argsString) {
     // argsString should be a json string
-    alert(argsString);
-    
     if (argsString.trim() === '') {
       return [];
     }
