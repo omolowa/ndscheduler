@@ -171,9 +171,6 @@ define(['utils',
           
         dayOfWeek = builderDayOfWeek.slice(0, -1);
 
-        $('#' + id).is(":checked")
-        var $boxes = $("input.weekday:checkbox") $('input[name=thename]:checked');
-
         if (jobName.trim() === '') {
           utils.alertError('Please fill in job name');
           return;
