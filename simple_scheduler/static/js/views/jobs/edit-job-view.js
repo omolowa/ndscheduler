@@ -12,6 +12,7 @@ require.config({
     'bootstrap': 'vendor/bootstrap',
     'bootstrapswitch': 'vendor/bootstrap-switch',
     'anypicker' : 'vendor/anypicker',
+    'picker' : 'vendor/picker',
     'utils': 'utils',
 
     'text': 'vendor/text',
@@ -36,6 +37,11 @@ require.config({
     'anypicker': {
       deps: ['jquery'],
       exports: 'AnyPicker'
+    },
+
+    'picker': {
+      deps: ['jquery'],
+      exports: 'Picker'
     }
   }
 });
@@ -111,7 +117,13 @@ define(['utils',
 //        var $button = $('#edit-input-job-time');
 //        var selDate = $button.data('job-hour') + ":" + $button.data('job-minute');
   
-        $('#edit-input-job-time').AnyPicker({
+        var timefield = document.getElementById('edit-input-job-time');
+        var picker = new Picker(input, {
+          format: 'HH:mm',
+          date: hour + ":" + minute
+        });
+
+      /*  $('#edit-input-job-time').AnyPicker({
           mode: "datetime",
           dateTimeFormat: "HH:mm",
           selectedDate: $('#edit-input-job-time').val(),
@@ -121,7 +133,8 @@ define(['utils',
           },
           theme: "iOS" // "Default", "iOS", "Android", "Windows"
         });
-  
+  */
+
         var $checkbox = $('<input>', {
           type: 'checkbox',
           name: 'pause-resume-checkbox',

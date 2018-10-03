@@ -6,6 +6,7 @@ require.config({
     'backbone': 'vendor/backbone',
     'underscore': 'vendor/underscore',
     'anypicker' : 'vendor/anypicker',
+    'picker' : 'vendor/picker',
     'jobs-view': 'views/jobs/jobs-view',
     'jobs-collection': 'models/jobs',
   },
