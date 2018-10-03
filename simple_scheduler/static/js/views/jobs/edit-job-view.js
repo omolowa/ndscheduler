@@ -114,7 +114,7 @@ define(['utils',
 //        var selDate = $button.data('job-hour') + ":" + $button.data('job-minute');
   
         var timefield = document.getElementById('edit-input-job-time');
-        var picker = new Picker(timefield, {
+        var timepicker = new picker(timefield, {
           format: 'HH:mm',
           date: hour + ":" + minute
         });
