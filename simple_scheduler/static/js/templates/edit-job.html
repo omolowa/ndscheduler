@@ -44,7 +44,8 @@
                             Scheduling
                         </label>
                         <div class="col-sm-2">
-                            <input type="text" id="edit-input-job-time" readonly>
+                            <span class="help-block text-center">Time</span>
+                            <input type="text" class="form-control" id="edit-input-job-time" readonly>
                         </div>
                         <div class="col-sm-2" style="display:none">
                             <input type="text" class="form-control" id="edit-input-job-minute">
@@ -62,7 +63,7 @@
                             <input type="text" class="form-control" id="edit-input-job-month">
                             <span class="help-block text-center">month</span>
                         </div>
-                        <div class="col-sm-2">
+                        <div class="col-sm-2" style="display: none">
                             <input type="text" class="form-control" id="edit-input-job-day-of-week">
                             <span class="help-block text-center">Which days</span>
                         </div>
@@ -71,28 +72,24 @@
                             https://codepen.io/steelwater/pen/BjeZQx
                         -->
                         <div class="weekDays-selector">
+                            <span class="help-block text-center">Which days</span>
                             <input type="checkbox" id="mon" class="weekday" />
-                            <label for="mon">Mon</label>
+                            <label for="mon">Mo</label>
                             <input type="checkbox" id="tue" class="weekday" />
-                            <label for="tue">Tue</label>
+                            <label for="tue">Tu</label>
                             <input type="checkbox" id="wed" class="weekday" />
-                            <label for="wed">Wed</label>
+                            <label for="wed">We</label>
+                            <br/>
                             <input type="checkbox" id="thu" class="weekday" />
-                            <label for="thu">Thu</label>
+                            <label for="thu">Th</label>
                             <input type="checkbox" id="fri" class="weekday" />
-                            <label for="fri">Fri</label>
+                            <label for="fri">Fr</label>
                             <input type="checkbox" id="sat" class="weekday" />
                             <label for="sat">Sat</label>
+                            <br/>
                             <input type="checkbox" id="sun" class="weekday" />
                             <label for="sun">Sun</label>
                           </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="" class="col-sm-2 control-label">
-                            Note:
-                        </label>
-                        0 is Monday, 6 is Sunday.Ex: <strong>0-3</strong>,
-                        <strong>mon,tue,fri,sat</strong>
                     </div>
                 </form>
             </div>
