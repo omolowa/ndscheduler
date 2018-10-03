@@ -37,11 +37,6 @@ require.config({
     'anypicker': {
       deps: ['jquery'],
       exports: 'AnyPicker'
-    },
-
-    'picker': {
-      deps: ['jquery'],
-      exports: 'Picker'
     }
   }
 });
