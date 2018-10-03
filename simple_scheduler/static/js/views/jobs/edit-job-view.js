@@ -51,7 +51,8 @@ define(['utils',
         'text!job-class-notes',
         'backbone',
         'bootstrapswitch',
-        'anypicker'], function(utils, EditJobModalHtml, JobClassNotesHtml) {
+        'anypicker',
+        'picker'], function(utils, EditJobModalHtml, JobClassNotesHtml) {
 
   'use strict';
 
