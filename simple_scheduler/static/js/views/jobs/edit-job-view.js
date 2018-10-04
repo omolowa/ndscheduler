@@ -33,10 +33,13 @@ require.config({
       deps: ['underscore', 'jquery'],
       exports: 'Backbone'
     },
-
     'anypicker': {
       deps: ['jquery'],
       exports: 'AnyPicker'
+    },
+    'picker': {
+      deps: ['jquery'],
+      exports: 'Picker'
     }
   }
 });
@@ -114,7 +117,7 @@ define(['utils',
 //        var selDate = $button.data('job-hour') + ":" + $button.data('job-minute');
   
         var timefield = document.getElementById('edit-input-job-time');
-        var timepicker = new picker(timefield, {
+        var timepicker = new Picker(timefield, {
           format: 'HH:mm',
           date: hour + ":" + minute
         });
