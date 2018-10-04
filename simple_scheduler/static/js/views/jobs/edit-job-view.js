@@ -13,7 +13,7 @@ require.config({
     'bootstrapswitch': 'vendor/bootstrap-switch',
     'utils': 'utils',
     'text': 'vendor/text',
-    'mobileselect' : 'vendor/mobileSelect',
+    'mobileSelect' : 'vendor/mobileSelect',
     'edit-job-modal': 'templates/edit-job.html',
     'job-class-notes': 'templates/job-class-notes.html'
   },
@@ -45,7 +45,7 @@ define(['utils',
         'text!job-class-notes',
         'backbone',
         'bootstrapswitch',
-        'mobileSelector'], function(utils, EditJobModalHtml, JobClassNotesHtml) {
+        'mobileSelect'], function(utils, EditJobModalHtml, JobClassNotesHtml) {
 
   'use strict';
 
