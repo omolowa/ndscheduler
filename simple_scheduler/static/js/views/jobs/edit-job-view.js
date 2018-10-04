@@ -11,15 +11,15 @@ require.config({
     'backbone': 'vendor/backbone',
     'bootstrap': 'vendor/bootstrap',
     'bootstrapswitch': 'vendor/bootstrap-switch',
-    'anypicker' : 'vendor/anypicker',
-    'picker' : 'vendor/picker',
     'utils': 'utils',
-
     'text': 'vendor/text',
+    'mobileselect' : 'vendor/mobileSelect',
     'edit-job-modal': 'templates/edit-job.html',
     'job-class-notes': 'templates/job-class-notes.html'
   },
-
+// 'anypicker' : 'vendor/anypicker',
+   // 'picker' : 'vendor/picker',
+   
   shim: {
     'bootstrapswitch': {
       deps: ['bootstrap']
@@ -33,13 +33,9 @@ require.config({
       deps: ['underscore', 'jquery'],
       exports: 'Backbone'
     },
-    'anypicker': {
+    'mobileSelect': {
       deps: ['jquery'],
-      exports: 'AnyPicker'
-    },
-    'picker': {
-      deps: ['jquery'],
-      exports: 'Picker'
+      exports: 'MobileSelect'
     }
   }
 });
@@ -49,8 +45,7 @@ define(['utils',
         'text!job-class-notes',
         'backbone',
         'bootstrapswitch',
-        'anypicker',
-        'picker'], function(utils, EditJobModalHtml, JobClassNotesHtml) {
+        'mobileSelector'], function(utils, EditJobModalHtml, JobClassNotesHtml) {
 
   'use strict';
 
@@ -115,12 +110,27 @@ define(['utils',
        
 //        var $button = $('#edit-input-job-time');
 //        var selDate = $button.data('job-hour') + ":" + $button.data('job-minute');
-  
-        var timefield = document.getElementById('edit-input-job-time');
-        var timepicker = new Picker(timefield, {
-          format: 'HH:mm',
-          date: hour + ":" + minute
+
+        var hourArr = ['00','01','02','03','04','05','06','07','08','09','10','11',
+                        '12','13','14','15','16','17','18','19','20','21','22','23'];
+        var minuteArr = ['00','10','20','30','40','50'];
+
+        var mobileSelect1 = new MobileSelect({
+          trigger: '#edit-input-job-time',
+          wheels: [
+            {data: hourArr},
+            {data: minuteArr}
+          ],
+          position:[$button.data('job-hour'),1],
+          callback:function(indexArr, data){
+              console.log(data); //Returns the selected json data
+          }
         });
+      
+      // var timefield = document.getElementById('edit-input-job-time');
+      //  var timepicker = new Picker(timefield, {
+      //    format: 'HH:mm',
+     //   });
 
       /*  $('#edit-input-job-time').AnyPicker({
           mode: "datetime",
