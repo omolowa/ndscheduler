@@ -13,7 +13,7 @@ require.config({
     'bootstrapswitch': 'vendor/bootstrap-switch',
     'utils': 'utils',
     'text': 'vendor/text',
-    'mobileSelect' : 'vendor/mobileSelect',
+    'mobileselect' : 'vendor/mobileSelect',
     'edit-job-modal': 'templates/edit-job.html',
     'job-class-notes': 'templates/job-class-notes.html'
   },
@@ -33,7 +33,7 @@ require.config({
       deps: ['underscore', 'jquery'],
       exports: 'Backbone'
     },
-    'mobileSelect': {
+    'mobileselect': {
       deps: ['jquery'],
       exports: 'MobileSelect'
     }
@@ -45,7 +45,7 @@ define(['utils',
         'text!job-class-notes',
         'backbone',
         'bootstrapswitch',
-        'mobileSelect'], function(utils, EditJobModalHtml, JobClassNotesHtml) {
+        'mobileselect'], function(utils, EditJobModalHtml, JobClassNotesHtml) {
 
   'use strict';
 
