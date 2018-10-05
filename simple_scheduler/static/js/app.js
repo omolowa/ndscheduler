@@ -8,19 +8,15 @@ require.config({
     'anypicker' : 'vendor/anypicker',
     'picker' : 'vendor/picker',
     'jobs-view': 'views/jobs/jobs-view',
-    'jobs-collection': 'models/jobs',
-    'mobileselect' : 'vendor/mobileSelect'
+    'jobs-collection': 'models/jobs'
   },
 
   shim: {
     'backbone': {
       deps: ['underscore', 'jquery'],
       exports: 'Backbone'
-    },
-    'mobileselect': {
-      deps: ['jquery'],
-      exports: 'MobileSelect'
     }
+  
   }
 });
 

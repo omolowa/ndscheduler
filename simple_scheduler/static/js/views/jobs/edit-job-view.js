@@ -14,7 +14,8 @@ require.config({
     'utils': 'utils',
     'text': 'vendor/text',
     'edit-job-modal': 'templates/edit-job.html',
-    'job-class-notes': 'templates/job-class-notes.html'
+    'job-class-notes': 'templates/job-class-notes.html'  ,
+    'mobileselect' : 'vendor/mobileselect'
   },
 // 'anypicker' : 'vendor/anypicker',
    // 'picker' : 'vendor/picker',
@@ -32,6 +33,13 @@ require.config({
       deps: ['underscore', 'jquery'],
       exports: 'Backbone'
     }
+    ,
+    
+    'mobileselect': {
+      deps: ['jquery'],
+      exports: 'MobileSelect'
+    }
+    
   }
 });
 
