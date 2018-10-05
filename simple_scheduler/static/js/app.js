@@ -8,6 +8,7 @@ require.config({
     'anypicker' : 'vendor/anypicker',
     'picker' : 'vendor/picker',
     'jobs-view': 'views/jobs/jobs-view',
+    'mobileselect' : 'vendor/mobileselect',
     'jobs-collection': 'models/jobs'
   },
 
@@ -16,7 +17,12 @@ require.config({
       deps: ['underscore', 'jquery'],
       exports: 'Backbone'
     }
-  
+    ,
+    'mobileselect': {
+      deps: ['jquery'],
+      exports: 'MobileSelect'
+    }
+
   }
 });
 
