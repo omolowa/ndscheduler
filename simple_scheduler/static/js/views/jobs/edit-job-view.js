@@ -157,7 +157,8 @@ define(['utils',
         var day = $('#edit-input-job-day').val();
         
 //        var args = $('#edit-input-job-task-args').val();
-
+        var args = "";
+        
         if ($('#actionbutton').is(":checked"))
         {
           args = '["on"]';
