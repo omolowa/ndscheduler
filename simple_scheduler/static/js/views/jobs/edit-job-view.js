@@ -104,6 +104,19 @@ define(['utils',
           } 
         }
        
+        if ($button.attr('data-job-pubargs') == 'on')
+        {
+          // Check the On Button
+          $('#actionon').prop("checked", true);
+          $('#actionoff').prop("checked", false);
+        }
+        else {
+          // Check the Off Button
+          $('#actionoff').prop("checked", true);
+          $('#actionon').prop("checked", false);
+
+        }
+
         var hourArr = ['00','01','02','03','04','05','06','07','08','09','10','11',
                         '12','13','14','15','16','17','18','19','20','21','22','23'];
         var minuteArr = ['00','10','20','30','40','50'];
