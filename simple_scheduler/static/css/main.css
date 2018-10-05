@@ -210,11 +210,12 @@ tr { height: 50px; }
 .weekDays-selector input[type=checkbox] + label {
   display: inline-block;
   border-radius: 6px;
+  box-sizing: border-box;
   background: #dddddd;
+  margin: 10px;
+  padding: 20px;
+  width: 100px;
   height: 40px;
-  width: 50px;
-  margin-right: 3px;
-  line-height: 30px;
   text-align: center;
   cursor: pointer;
 }
@@ -222,4 +223,19 @@ tr { height: 50px; }
 .weekDays-selector input[type=checkbox]:checked + label {
   background: rgb(40, 225, 70);
   color: #ffffff;
+}
+
+.container {
+  background: #EEE;
+  margin: 0 auto;
+  padding: 50px;
+  width: 300px;
+  max-width: 1100px;
+} 
+ .staff {
+  background: #DDD;
+  text-align: center;
+}
+.person {
+  line-height: 30px;
 }

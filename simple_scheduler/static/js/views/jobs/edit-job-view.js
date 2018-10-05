@@ -104,45 +104,9 @@ define(['utils',
           } 
         }
        
-//        var $button = $('#edit-input-job-time');
-//        var selDate = $button.data('job-hour') + ":" + $button.data('job-minute');
-
         var hourArr = ['00','01','02','03','04','05','06','07','08','09','10','11',
                         '12','13','14','15','16','17','18','19','20','21','22','23'];
         var minuteArr = ['00','10','20','30','40','50'];
-
-       /* var mobileSelect1 = new MobileSelect({
-          trigger: '#edit-input-job-time',
-          wheels: [
-            {data: hourArr},
-            {data: minuteArr}
-          ]
-        });
-      */
-        /*,
-          position:[$button.data('job-hour'),1],
-          callback:function(indexArr, data){
-              console.log(data); //Returns the selected json data
-          }
-          */
-
-
-      // var timefield = document.getElementById('edit-input-job-time');
-      //  var timepicker = new Picker(timefield, {
-      //    format: 'HH:mm',
-     //   });
-
-      /*  $('#edit-input-job-time').AnyPicker({
-          mode: "datetime",
-          dateTimeFormat: "HH:mm",
-          selectedDate: $('#edit-input-job-time').val(),
-          onChange: function(iRow, iComp, oSelectedValues)
-          {
-            console.log("Changed Value : " + iRow + " " + iComp + " " + oSelectedValues);
-          },
-          theme: "iOS" // "Default", "iOS", "Android", "Windows"
-        });
-  */
 
         var $checkbox = $('<input>', {
           type: 'checkbox',
