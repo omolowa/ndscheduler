@@ -108,15 +108,9 @@ define(['utils',
         {
           // Check the On Button
           $('#actionbutton').prop("checked", true);
-          $('#actionon').prop("checked", true);
-          $('#actionoff').prop("checked", false);
         }
         else {
-          // Check the Off Button
-          $('#actionoff').prop("checked", true);
-          $('#actionbutton').prop("checked", true);
-          $('#actionon').prop("checked", false);
-
+          $('#actionbutton').prop("checked", false);
         }
 
         var hourArr = ['00','01','02','03','04','05','06','07','08','09','10','11',
@@ -164,7 +158,7 @@ define(['utils',
         
 //        var args = $('#edit-input-job-task-args').val();
 
-        if ($('#actionon').is(":checked"))
+        if ($('#actionbutton').is(":checked"))
         {
           args = '["on"]';
         } 
