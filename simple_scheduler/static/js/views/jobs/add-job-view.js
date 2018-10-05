@@ -85,7 +85,7 @@ define(['utils',
         var hour = $('#input-job-hour').val();
         var minute = $('#input-job-minute').val();
         
-        if ($('#actionbutton').is(":checked"))
+        if ($('#addactionbutton').is(":checked"))
         {
           args = '["on"]';
         } 
