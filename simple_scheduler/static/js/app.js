@@ -8,7 +8,7 @@ require.config({
     'anypicker' : 'vendor/anypicker',
     'picker' : 'vendor/picker',
     'jobs-view': 'views/jobs/jobs-view',
-    'mobileselect' : 'vendor/mobileselect',
+    'mobileselect' : 'vendor/mobileSelect',
     'jobs-collection': 'models/jobs'
   },
 

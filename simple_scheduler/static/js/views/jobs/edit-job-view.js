@@ -13,7 +13,7 @@ require.config({
     'bootstrapswitch': 'vendor/bootstrap-switch',
     'utils': 'utils',
     'text': 'vendor/text',
-	  'mobileselect': 'vendor/mobileselect',
+	  'mobileselect': 'vendor/mobileSelect',
     'edit-job-modal': 'templates/edit-job.html',
     'job-class-notes': 'templates/job-class-notes.html'
   },
@@ -132,7 +132,7 @@ define(['utils',
           }
           */
 
-          
+
       // var timefield = document.getElementById('edit-input-job-time');
       //  var timepicker = new Picker(timefield, {
       //    format: 'HH:mm',
