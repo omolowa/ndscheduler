@@ -211,31 +211,17 @@ tr { height: 50px; }
   display: inline-block;
   border-radius: 6px;
   box-sizing: border-box;
-  background: #dddddd;
+  background: #5f5f5f;
   margin: 10px;
   padding: 20px;
-  width: 100px;
+  width: 120px;
   height: 40px;
+  line-height: 0px;
   text-align: center;
   cursor: pointer;
 }
 
 .weekDays-selector input[type=checkbox]:checked + label {
-  background: rgb(40, 225, 70);
+  background: rgb(23, 117, 39);
   color: #ffffff;
-}
-
-.container {
-  background: #EEE;
-  margin: 0 auto;
-  padding: 50px;
-  width: 300px;
-  max-width: 1100px;
-} 
- .staff {
-  background: #DDD;
-  text-align: center;
-}
-.person {
-  line-height: 30px;
 }
