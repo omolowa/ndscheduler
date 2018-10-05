@@ -33,6 +33,11 @@ require.config({
       deps: ['underscore', 'jquery'],
       exports: 'Backbone'
     }
+    ,
+    'mobileselect': {
+      deps: ['jquery'],
+      exports: 'MobileSelect'
+    }
     
   }
 });
