@@ -33,12 +33,6 @@ require.config({
       deps: ['underscore', 'jquery'],
       exports: 'Backbone'
     }
-    ,
-    'mobileselect': {
-      deps: ['jquery'],
-      exports: 'MobileSelect'
-    }
-    
   }
 });
 
@@ -117,14 +111,14 @@ define(['utils',
                         '12','13','14','15','16','17','18','19','20','21','22','23'];
         var minuteArr = ['00','10','20','30','40','50'];
 
-        var mobileSelect1 = new MobileSelect({
+       /* var mobileSelect1 = new MobileSelect({
           trigger: '#edit-input-job-time',
           wheels: [
             {data: hourArr},
             {data: minuteArr}
           ]
         });
-      
+      */
         /*,
           position:[$button.data('job-hour'),1],
           callback:function(indexArr, data){
