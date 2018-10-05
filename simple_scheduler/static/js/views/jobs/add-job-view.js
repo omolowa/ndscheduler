@@ -82,6 +82,9 @@ define(['utils',
         var month = "*";
         var day = "*";
         var args = "";
+
+        var hour = $('#input-job-hour').val();
+        var minute = $('#input-job-minute').val();
         
         if ($('#actionbutton').is(":checked"))
         {
