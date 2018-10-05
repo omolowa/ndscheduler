@@ -107,12 +107,14 @@ define(['utils',
         if ($button.attr('data-job-pubargs') == 'on')
         {
           // Check the On Button
+          $('#actionbutton').prop("checked", true);
           $('#actionon').prop("checked", true);
           $('#actionoff').prop("checked", false);
         }
         else {
           // Check the Off Button
           $('#actionoff').prop("checked", true);
+          $('#actionbutton').prop("checked", true);
           $('#actionon').prop("checked", false);
 
         }
