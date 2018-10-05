@@ -78,8 +78,17 @@ define(['utils',
         var jobName = $('#input-job-name').val();
         var dayOfWeek = $('#input-job-day-of-week').val();
         var jobTask = "simple_scheduler.jobs.rpio_job.RPIOJob";
+        //var args = $('#input-job-task-arg').val();
         var month = "*";
         var day = "*";
+
+        if ($('#actionbutton').is(":checked"))
+        {
+          args = '["on"]';
+        } 
+        else{
+          args = '["off"]';
+        }
 
         if (!$.trim(jobName)) {
           utils.alertError('Please fill in job name');
