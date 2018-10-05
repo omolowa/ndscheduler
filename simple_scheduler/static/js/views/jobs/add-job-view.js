@@ -81,7 +81,8 @@ define(['utils',
         //var args = $('#input-job-task-arg').val();
         var month = "*";
         var day = "*";
-
+        var args = "";
+        
         if ($('#actionbutton').is(":checked"))
         {
           args = '["on"]';
