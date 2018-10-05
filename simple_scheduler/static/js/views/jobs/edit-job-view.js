@@ -160,11 +160,19 @@ define(['utils',
         var month = $('#edit-input-job-month').val();
         var day = $('#edit-input-job-day').val();
         
-        var args = $('#edit-input-job-task-args').val();
+//        var args = $('#edit-input-job-task-args').val();
 
-        if(args.charAt() != "[") {
-          args = '["' + $('#edit-input-job-task-args').val() + '"]';
+        if ($('#actionon').is(":checked"))
+        {
+          args = '["on"]';
+        } 
+        else{
+          args = '["off"]';
         }
+
+   //     if(args.charAt() != "[") {
+  //        args = '["' + $('#edit-input-job-task-args').val() + '"]';
+  //      }
 
         //        var hour = $('#edit-input-job-hour').val();
         //        var minute = $('#edit-input-job-minute').val();
