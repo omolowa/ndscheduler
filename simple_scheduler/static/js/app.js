@@ -9,12 +9,17 @@ require.config({
     'picker' : 'vendor/picker',
     'jobs-view': 'views/jobs/jobs-view',
     'jobs-collection': 'models/jobs',
+    'mobileselect' : 'vendor/mobileSelect'
   },
 
   shim: {
     'backbone': {
       deps: ['underscore', 'jquery'],
       exports: 'Backbone'
+    },
+    'mobileselect': {
+      deps: ['jquery'],
+      exports: 'MobileSelect'
     }
   }
 });
