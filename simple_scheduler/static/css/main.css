@@ -256,7 +256,7 @@ tr { height: 50px; }
   position: relative;
   display: inline-block;
   width: 120px;
-  height: 68px;
+  height: 34px;
 }
 
 /* Hide default HTML checkbox */
@@ -278,10 +278,10 @@ tr { height: 50px; }
 .slider:before {
   position: absolute;
   content: "";
-  height: 52px;
+  height: 26px;
   width: 52px;
   left: 8px;
-  bottom: 8px;
+  bottom: 4px;
   background-color: white;
   -webkit-transition: .4s;
   transition: .4s;
@@ -303,7 +303,7 @@ input:checked + .slider:before {
 
 /* Rounded sliders */
 .slider.round {
-  border-radius: 68px;
+  border-radius: 34px;
 }
 
 .slider.round:before {

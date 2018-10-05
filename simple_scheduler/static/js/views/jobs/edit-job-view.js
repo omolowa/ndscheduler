@@ -104,7 +104,7 @@ define(['utils',
           } 
         }
        
-        if ($button.attr('data-job-pubargs') == 'on')
+        if ($button.attr('data-job-pubargs') == '["on"]')
         {
           // Check the On Button
           $('#actionbutton').prop("checked", true);
@@ -158,7 +158,7 @@ define(['utils',
         
 //        var args = $('#edit-input-job-task-args').val();
         var args = "";
-        
+
         if ($('#actionbutton').is(":checked"))
         {
           args = '["on"]';

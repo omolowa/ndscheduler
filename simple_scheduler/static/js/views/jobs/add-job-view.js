@@ -78,7 +78,6 @@ define(['utils',
         var jobName = $('#input-job-name').val();
         var dayOfWeek = $('#input-job-day-of-week').val();
         var jobTask = "simple_scheduler.jobs.rpio_job.RPIOJob";
-        //var args = $('#input-job-task-arg').val();
         var month = "*";
         var day = "*";
         var args = "";
