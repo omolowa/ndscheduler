@@ -13,7 +13,6 @@ require.config({
     'bootstrapswitch': 'vendor/bootstrap-switch',
     'utils': 'utils',
     'text': 'vendor/text',
-    'mobileselect' : 'vendor/mobileSelect',
     'edit-job-modal': 'templates/edit-job.html',
     'job-class-notes': 'templates/job-class-notes.html'
   },
@@ -32,10 +31,6 @@ require.config({
     'backbone': {
       deps: ['underscore', 'jquery'],
       exports: 'Backbone'
-    },
-    'mobileselect': {
-      deps: ['jquery'],
-      exports: 'MobileSelect'
     }
   }
 });
