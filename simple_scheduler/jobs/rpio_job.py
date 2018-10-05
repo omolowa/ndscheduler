@@ -19,13 +19,16 @@ class RPIOJob(job.JobBase):
 
     def run(self, action, *args, **kwargs):
         GPIO.setmode(GPIO.BCM)
-        switchPin = 23
+        ledPin = 23
+        switchPin = 17
         GPIO.setwarnings(False)
         GPIO.setup(switchPin, GPIO.OUT)
         print('--RPIOJob argument: %s' % (action))
         if action == "on":
+            GPIO.output(ledPin, GPIO.HIGH)
             GPIO.output(switchPin, GPIO.HIGH)
         if action == "off":
+            GPIO.output(ledPin, GPIO.LOW)
             GPIO.output(switchPin, GPIO.LOW)
         return action
 
