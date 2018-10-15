@@ -28,7 +28,7 @@ require.config({
     },
 
     'backbone': {
-      deps: ['underscore', 'jquery'],
+      deps: ['underscore', 'jquery','mobiscroll'],
       exports: 'Backbone'
     },
 
