@@ -13,12 +13,10 @@ require.config({
     'bootstrapswitch': 'vendor/bootstrap-switch',
     'utils': 'utils',
     'text': 'vendor/text',
-	  'mobileselect': 'vendor/mobileSelect',
+    'mobiscroll' : 'vendor/mobiscroll.min',
     'edit-job-modal': 'templates/edit-job.html',
     'job-class-notes': 'templates/job-class-notes.html'
   },
-// 'anypicker' : 'vendor/anypicker',
-   // 'picker' : 'vendor/picker',
    
   shim: {
     'bootstrapswitch': {
@@ -32,6 +30,10 @@ require.config({
     'backbone': {
       deps: ['underscore', 'jquery'],
       exports: 'Backbone'
+    },
+
+    'mobiscroll': {
+      deps:['jquery']
     }
   }
 });
@@ -41,7 +43,7 @@ define(['utils',
         'text!job-class-notes',
         'backbone',
         'bootstrapswitch',
-        'mobileselect'], function(utils, EditJobModalHtml, JobClassNotesHtml) {
+        'mobiscroll'], function(utils, EditJobModalHtml, JobClassNotesHtml) {
 
   'use strict';
 
@@ -49,6 +51,9 @@ define(['utils',
     initialize: function() {
       $('body').append(EditJobModalHtml);
 
+      mobiscroll.settings = {
+        theme: 'auto'
+      };
       this.bindEditJobConfirmClickEvent();
       this.bindDeleteJobConfirmClickEvent();
       this.bindModalPopupEvent();
