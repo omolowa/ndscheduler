@@ -5,8 +5,7 @@ require.config({
     'jquery': 'vendor/jquery',
     'backbone': 'vendor/backbone',
     'underscore': 'vendor/underscore',
-    'anypicker' : 'vendor/anypicker',
-    'picker' : 'vendor/picker',
+    'mobiscroll' : 'vendor/mobiscroll',
     'jobs-view': 'views/jobs/jobs-view',
     'mobileselect' : 'vendor/mobileSelect',
     'jobs-collection': 'models/jobs'
@@ -14,14 +13,14 @@ require.config({
 
   shim: {
     'backbone': {
-      deps: ['underscore', 'jquery'],
+      deps: ['underscore', 'jquery','mobiscroll'],
       exports: 'Backbone'
+    },
+
+    'mobiscroll': {
+      deps:['jquery']
     }
-    ,
-    'mobileselect': {
-      deps: ['jquery'],
-      exports: 'MobileSelect'
-    }
+    
 
   }
 });
