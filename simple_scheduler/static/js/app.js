@@ -7,7 +7,6 @@ require.config({
     'underscore': 'vendor/underscore',
     'mobiscroll' : 'vendor/mobiscroll',
     'jobs-view': 'views/jobs/jobs-view',
-    'mobileselect' : 'vendor/mobileSelect',
     'jobs-collection': 'models/jobs'
   },
 
@@ -18,7 +17,8 @@ require.config({
     },
 
     'mobiscroll': {
-      deps:['jquery']
+      deps:['jquery'],
+      exports: 'mobiscroll'
     }
     
 
