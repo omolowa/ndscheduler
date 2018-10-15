@@ -13,7 +13,7 @@ require.config({
     'bootstrapswitch': 'vendor/bootstrap-switch',
     'utils': 'utils',
     'text': 'vendor/text',
-    'mobiscroll' : 'vendor/mobiscroll.js',
+    'mobiscroll' : 'vendor/mobiscroll',
     'edit-job-modal': 'templates/edit-job.html',
     'job-class-notes': 'templates/job-class-notes.html'
   },
