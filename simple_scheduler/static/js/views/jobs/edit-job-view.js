@@ -51,9 +51,9 @@ define(['utils',
     initialize: function() {
       $('body').append(EditJobModalHtml);
 
-      mobiscroll.settings = {
+      /*mobiscroll.settings = {
         theme: 'auto'
-      };
+      };*/
       this.bindEditJobConfirmClickEvent();
       this.bindDeleteJobConfirmClickEvent();
       this.bindModalPopupEvent();
