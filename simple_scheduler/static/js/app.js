@@ -27,7 +27,8 @@ require.config({
 
 require(['jobs-view',
   'jobs-collection',
-  'backbone'], function(JobsView,
+  'backbone',
+  'mobiscroll'], function(JobsView,
                         JobsCollection) {
   'use strict';
 
