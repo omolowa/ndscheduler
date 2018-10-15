@@ -42,7 +42,8 @@ define(['utils',
         'text!edit-job-modal',
         'text!job-class-notes',
         'backbone',
-        'bootstrapswitch'], function(utils, EditJobModalHtml, JobClassNotesHtml) {
+        'bootstrapswitch',
+        'mobiscroll'], function(utils, EditJobModalHtml, JobClassNotesHtml) {
 
   'use strict';
 
