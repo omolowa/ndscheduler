@@ -53,9 +53,12 @@
                             <span class="help-block text-center">Time</span>
                             <input type="text" class="form-control js-time-picker" id="edit-input-job-time">
                         </div>
+                        
                         <div>
-                            <label for="height">Height (cm)</label>
-                            <input id="height" type="number" data-role="stepper" data-val="left" min="130" max="220" step="1" value="170" />
+                            <label class="mbsc-slider-success">
+                                Steps
+                                <input data-tooltip="true" type="range" value="12" min="1" max="23" step="1" data-step-labels="[1, 6, 12, 18, 23]">
+                            </label>
                         </div>
                         <div class="col-sm-2" style="display:none">
                             <input type="text" class="form-control" id="edit-input-job-minute">
