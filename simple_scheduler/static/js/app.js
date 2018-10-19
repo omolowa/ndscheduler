@@ -11,7 +11,7 @@ require.config({
 
   shim: {
     'backbone': {
-      deps: ['underscore', 'jquery','mobiscroll'],
+      deps: ['underscore', 'jquery'],
       exports: 'Backbone'
     },   
 
