@@ -20,7 +20,8 @@ require.config({
    
   shim: {
     'mobiscroll': {
-      deps:['jquery']
+      deps:['jquery'],
+      export: '$.fn.mobiscroll'
     },
     
     'bootstrapswitch': {
@@ -120,8 +121,7 @@ define(['utils',
                         '12','13','14','15','16','17','18','19','20','21','22','23'];
         var minuteArr = ['00','10','20','30','40','50'];
 
-        $('#edit-input-job-time-hour').mobiscroll().slider();
-        
+         $("#edit-input-job-time-hour").mobiscroll().slider();
         var $checkbox = $('<input>', {
           type: 'checkbox',
           name: 'pause-resume-checkbox',

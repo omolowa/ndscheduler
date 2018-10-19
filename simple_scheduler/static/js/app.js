@@ -63,7 +63,7 @@ require(['jobs-view',
 
   var appRouter = new AppRouter;
   appRouter.on('route:jobsRoute', function(jobId) {
-    switchTab('jobs');
+    //switchTab('jobs');
     if (jobId) {
       jobsCollection.getJob(jobId);
     } else {
@@ -73,7 +73,7 @@ require(['jobs-view',
 
   appRouter.on('route:defaultRoute', function(actions) {
     // Anything else defaults to jobs view
-    switchTab('jobs');
+    //switchTab('jobs');
     jobsCollection.getJobs();
   });
 
