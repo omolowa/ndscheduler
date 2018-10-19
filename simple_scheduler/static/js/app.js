@@ -5,7 +5,6 @@ require.config({
     'jquery': 'vendor/jquery',
     'backbone': 'vendor/backbone',
     'underscore': 'vendor/underscore',
-    'mobiscroll' : 'vendor/mobiscroll',
     'jobs-view': 'views/jobs/jobs-view',
     'jobs-collection': 'models/jobs'
   },
@@ -14,21 +13,14 @@ require.config({
     'backbone': {
       deps: ['underscore', 'jquery','mobiscroll'],
       exports: 'Backbone'
-    },
-
-    'mobiscroll': {
-      deps:['jquery'],
-      exports: 'mobiscroll'
-    }
-    
+    },   
 
   }
 });
 
 require(['jobs-view',
   'jobs-collection',
-  'backbone',
-  'mobiscroll'], function(JobsView,
+  'backbone'], function(JobsView,
                         JobsCollection) {
   'use strict';
 
