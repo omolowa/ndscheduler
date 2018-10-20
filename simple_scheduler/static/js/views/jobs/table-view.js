@@ -55,6 +55,8 @@ define(['utils',
   return Backbone.View.extend({
 
     initialize: function() {
+
+      alert("Initializing");
       this.listenTo(this.collection, 'sync', this.render);
       this.listenTo(this.collection, 'request', this.requestRender);
       this.listenTo(this.collection, 'reset', this.resetRender);
