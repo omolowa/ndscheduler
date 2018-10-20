@@ -56,7 +56,6 @@ define(['utils',
 
     initialize: function() {
 
-      alert("Initializing");
       this.listenTo(this.collection, 'sync', this.render);
       this.listenTo(this.collection, 'request', this.requestRender);
       this.listenTo(this.collection, 'reset', this.resetRender);
@@ -80,6 +79,9 @@ define(['utils',
 		            return '<a href="'+data+'">Download</a>';
 		          }
       });
+
+      alert("Initializing");
+      
     },
 
     /**
