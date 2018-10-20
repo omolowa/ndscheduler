@@ -20,6 +20,11 @@ require.config({
    
   shim: {
     
+    'mobiscroll': {
+      deps: ['jquery'],
+      exports: '$.fn.mobiscroll'
+    },
+
     'bootstrapswitch': {
       deps: ['bootstrap']
     },
