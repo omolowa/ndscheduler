@@ -36,6 +36,11 @@ require.config({
     'backbone': {
       deps: ['underscore', 'jquery'],
       exports: 'Backbone'
+    },
+
+    'picker': {
+      deps: ['jquery'],
+      exports: 'Picker'
     }
   }
 });
@@ -44,7 +49,8 @@ define(['utils',
         'text!edit-job-modal',
         'text!job-class-notes',
         'backbone',
-        'bootstrapswitch'], function(utils, EditJobModalHtml, JobClassNotesHtml) {
+        'bootstrapswitch',
+        'picker'], function(utils, EditJobModalHtml, JobClassNotesHtml) {
 
   'use strict';
 
@@ -123,6 +129,10 @@ define(['utils',
 
         //$("#edit-input-job-time-hour").mobiscroll().slider();
          
+        new Picker(document.querySelector('.js-time-picker'), {
+          format: 'HH:mm',
+        });
+        
         var $checkbox = $('<input>', {
           type: 'checkbox',
           name: 'pause-resume-checkbox',
