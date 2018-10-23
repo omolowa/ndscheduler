@@ -14,6 +14,7 @@ require.config({
     'utils': 'utils',
     'text': 'vendor/text',
     'mobiscroll' : 'vendor/mobiscroll',
+    'picker' : 'vendor/picker',
     'edit-job-modal': 'templates/edit-job.html',
     'job-class-notes': 'templates/job-class-notes.html'
   },
@@ -132,7 +133,7 @@ define(['utils',
         new Picker(document.querySelector('.js-time-picker'), {
           format: 'HH:mm',
         });
-        
+
         var $checkbox = $('<input>', {
           type: 'checkbox',
           name: 'pause-resume-checkbox',
